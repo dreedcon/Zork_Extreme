@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 
 #include "Extra_Content.h"
 
@@ -7,6 +8,7 @@ using namespace std;
 
 int main()
 {
+	system("color A9");
 	string write;
 	string write1;
 	
@@ -49,7 +51,10 @@ int main()
 	printf("%s, \n\n", Position1->info); //imprimimos la descripcion de la posicion
 
 	}
-
+	else if (write == "quit")
+	{
+		return getchar();
+	}
 	
 	
 	
