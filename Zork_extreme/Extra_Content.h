@@ -4,8 +4,9 @@
 //Los enum de las varibles
 enum Allrooms
 {
-	 KITCHEN,
-	 HALL,
+	KITCHEN,
+	HALL,
+	
 };
 
 enum Positions
@@ -14,7 +15,7 @@ enum Positions
 	SOUTH,
 	EAST,
 	WEST,
-
+	EXIT,
 };
 
 //Class father es la jefa las demas iran heredando de esta (o esa es la idea)

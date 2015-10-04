@@ -10,7 +10,7 @@ int main()
 {
 	system("color A9");
 	string write;
-	string write1;
+	bool flag = true;
 	
 	printf("\n\n Welcome to Zork_Extreme You are in World, where many dangers will occur and     will die , but death is passing here , whether that luck with you .\n\n\t");
 
@@ -21,44 +21,66 @@ int main()
 	//lo mismo pero en las posiciones
 	Father* Position = new Look(NORTH);
 	Father* Position1 = new Look(EAST);
+	Father* Position2 = new Look(WEST);
+	//salida de la cocina
+	Father* Position_Exit = new Look(EXIT);
+	
 	
 	//construimos the room kitchen 
 	kitchen->room;
-	kitchen->info = {"\n estas en la cocina, en ella encontraras comida, agua , y a lo mejor utensilios  de ayuda"};
+	kitchen->info = {"\n these in the kitchen, it will find food, water, utensils and maybe help"};
 	
 	//construimos the room hall
 	Hall->room;
-	Hall->info = { "\n estas en la entrada no ves gran cosa, ves que hay una puerta y un ventana" };
+	Hall->info = { "\n these at the entrance do not see much, you see that there is a door and a window" };
 
 	printf("%s, \n\n", kitchen->info); //imprimimos la room
 	
 	//construimos las posiciones
+	//north kithcen
 	Position->look;
-	Position->info = { "\n al norte ves que hay un fregadero, dos tomates, y una cantimplora\n" };
+	Position->info = { "\n at north, you see that there is a sink, two tomatoes and a canteen \n" };
+	//east kitchen
 	Position1->look;
-	Position1->info = { "\n en el este ves que esta la salida de la cocina \n" };
+	Position_Exit->look;
+	Position1->info = { "\n at the east you see this off the kitchen \n" };//exit Kitchen
+    Position_Exit->info = { "\n exit the kitchen " };
+	//west kitchen
+	Position2->look;
+	Position2->info = {"\n nothing special"};
 	
-	cin >> write;
-	if (write == "north")
-	{
-		
-	printf("%s, \n\n", Position->info); //imprimimos la descripcion de la posicion
 	
-	}
-	else if (write == "east")
-	{
-	
-	printf("%s, \n\n", Position1->info); //imprimimos la descripcion de la posicion
 
-	}
-	else if (write == "quit")
+	//impresion de las posiciones de la room Kitchen
+	
+	while (flag)
 	{
-		return getchar();
+		cin >> write;
+		if (write == "north")
+		{
+			printf("%s, \n\n", Position->info); //imprimimos la descripcion de la posicion
+		}
+		else if (write == "east" || write == "exit")
+		{
+			printf("%s, \n\n", Position1->info); //imprimimos la descripcion de la posicion
+		    printf("%s, \n\n", Position_Exit->info);
+		}
+	   
+	   else if (write == "west")
+	   {
+		     printf("%s \n\n", Position2->info);
+	   }
+		//comando para cerrar
+		else if (write == "quit")
+		{
+			flag = false;
+			system("pause");
+		}
+		else
+		{
+			printf("\n no te entiendo");
+		}
 	}
 	
 	
-	
-	
-	
-	system("pause");
 }
