@@ -186,7 +186,7 @@ a[2]->y; -> para el Heap
 
 . -> variable para el stack
 
--> ->variable para el heap
+-> -> variable para el heap
 
 //COSAS PARA INVESTIGAR\\
 
@@ -197,7 +197,8 @@ memset -> Establece los primeros bytes num del bloque de memoria apuntado por pt
 memcpy -> Copia los valores de bytes num de la ubicación apuntada por fuente directamente al bloque de memoria apuntado por destino.
           El tipo de subyacente de los objetos a la que apunta tanto a los punteros de origen y destino son irrelevantes para esta función ; El resultado es una copia binaria de los datos.
           La función no comprueba para cualquier carácter nulo que termina en fuente - siempre copias exactamente num bytes .
-          Para evitar desbordamientos , el tamaño de las matrices apuntado por parámetros tanto del destino y de origen , deberá ser al menos num bytes , y no debe solaparse (por bloques de memoria superpuestas , memmove es un enfoque más seguro ) .
+          Para evitar desbordamientos , el tamaño de las matrices apuntado por parámetros tanto del destino y de origen , deberá ser al menos num bytes , y no debe solaparse (por bloques de memoria superpuestas , 
+		  memmove es un enfoque más seguro ) .
 
 memcmp -> Compara los primeros bytes num del bloque de memoria apuntado por ptr1 a los primeros bytes num apuntadas por ptr2 , devolviendo cero si todo el partido o un valor diferente de cero que representa que es mayor si no lo hacen .
           Observe que , a diferencia de strcmp , la función no se detiene la comparación después de encontrar un carácter nulo
@@ -205,6 +206,7 @@ memcmp -> Compara los primeros bytes num del bloque de memoria apuntado por ptr1
 														 //TEMA 2: THEORY OF C++\\
 
                                                               //INTRO A C++\\
+
 Los cuatro fundamentos de C++ que expanderemos mas adelante son Encapsulacion, Herencia, Polimorfismo, Overload
 
                                                               //REFERENCIAS\\
@@ -213,15 +215,51 @@ nota1: siempre que pases un argumento, lo copia en el stack
 
 ejemplo:
      
-	 struct lista
+	 struct lista                                                                 
 	 {
-	   chara[100];
+	   char[100];
 	 }
      
-	 int sum(lista my_list)
+	 int sum(lista my_list) -> esto pasa por valor
 	 {
-	  rellenooooooooooooooooooooooo
+	  
 	 }
+
+	 double a=5;
+	
+	 double* b=&a; le pasamos la direccion de memoria
+	
+	 my_func(b);
+	 ->b? cuanto valdra
+	 
+	 void my_func(double* my_double)
+	 {
+	  my_double = NULL;//no hace nada porque si yo le digo que me devuelva la *b nos devolvera el contenido tiene preferencia del contenido
+	  //y si pones\\ *my_double = 10  //te devolvera el 10 
+	 }
+
+	 cuando aparecieron las referencias en c++ 
+	 
+	 1)cuando pasamos una referencia simplificamos el lenguaje 
+	 
+	 2)las referencias no se puede modificar                                          ---->> todo esto no se puede hacer 
+	 
+	 3)si una vez haz fijado la referencia no se puede alterar
+
+	 4)no pueden ser NULL
+
+	 
+
+	 double a= 5;
+	 my_func(a);
+	 
+	 cuanto vale a???
+	 
+	 void my_func(double& my_double)
+	 {
+	 my_double = 10;
+	 }
+	 
 
                                                         //Los 4 fundamentos de C++\\
 encapsulacion:
@@ -265,7 +303,7 @@ ejemplo: Class A2 : public class A (la clase padre es la A y la hija la A2)
 
 si es PUBLIC puedo acceder a los publico que tenga del padre, y lo que sea protected del padre, y al privated nada.
 
-si es PROTECTED  puede covertir las cosas de a publicas es protected, y puede acceder a lo protected, y al privated nada. 
+si es PROTECTED  puede covertir las cosas de a publicas en protected, y puede acceder a lo protected, y al privated nada. 
 
 si es PRIVATED hace lo mismo acede a lo publico y en la hija lo vuelve privado, y el protected lo mismo, y lo privated nada.
 
@@ -278,12 +316,6 @@ la especializacion.
 
 
 clase interfaz 
-
-examen lunes:
- 1)herencia
- 2)polimorfismo
- 3)struct
- 4)encapsulacion
 
 
 

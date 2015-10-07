@@ -8,6 +8,7 @@ using namespace std;
 
 int main()
 {
+    
 	system("color A9");
 	string write;
 	bool flag = true;
@@ -22,6 +23,7 @@ int main()
 	Father* Position = new Look(NORTH);
 	Father* Position1 = new Look(EAST);
 	Father* Position2 = new Look(WEST);
+	Father* Position3 = new Look(SOUTH);
 	//salida de la cocina
 	Father* Position_Exit = new Look(EXIT);
 	
@@ -37,19 +39,25 @@ int main()
 	printf("%s, \n\n", kitchen->info); //imprimimos la room
 	
 	//construimos las posiciones
+	
 	//north kithcen
 	Position->look;
 	Position->info = { "\n at north, you see that there is a sink, two tomatoes and a canteen \n" };
-	//east kitchen
+	
+	//east kitchen and extit
 	Position1->look;
 	Position_Exit->look;
 	Position1->info = { "\n at the east you see this off the kitchen \n" };//exit Kitchen
     Position_Exit->info = { "\n exit the kitchen " };
+	
 	//west kitchen
 	Position2->look;
 	Position2->info = {"\n nothing special"};
 	
-	
+	//south kitchen
+	Position3->look;
+	Position3->info = {"\n you see a window, but is close"};
+
 
 	//impresion de las posiciones de la room Kitchen
 	
@@ -62,14 +70,21 @@ int main()
 		}
 		else if (write == "east" || write == "exit")
 		{
-			printf("%s, \n\n", Position1->info); //imprimimos la descripcion de la posicion
+			printf("%s, \n\n", Position1->info);
 		    printf("%s, \n\n", Position_Exit->info);
 		}
 	   
 	   else if (write == "west")
 	   {
-		     printf("%s \n\n", Position2->info);
+		   printf("%s \n\n", Position2->info); //imprimimos la descripcion de la posicion
 	   }
+	   else if (write == "south")
+	   {
+		   printf("%s \n\n", Position3->info); //imprimimos la descripcion de la posicion
+	   }
+		
+		
+		
 		//comando para cerrar
 		else if (write == "quit")
 		{
@@ -84,3 +99,4 @@ int main()
 	
 	
 }
+

@@ -16,6 +16,7 @@ enum Positions
 	EAST,
 	WEST,
 	EXIT,
+	ENTER,
 };
 
 //Class father es la jefa las demas iran heredando de esta (o esa es la idea)
@@ -32,7 +33,7 @@ public:
 	
   
 	
-
+	
 };
 
 //class Room es una clase que esta heredando las cosas de la de father
@@ -46,17 +47,6 @@ public:
 		room = _room;
 
 	}
-    
-	void setinfo(char* _info, int lenght)
-	{
-		info = new char[lenght];
-
-		for (unsigned int i = 0; i < lenght; i++)
-		{
-			info[i] = _info[i];
-		}
-	}
-  
 
 }; 
 
@@ -71,16 +61,7 @@ public:
 	{
 		look = _look;
 	}
-	
-	void setinfo(char* _info, int lenght)
-	{
-		info = new char[lenght];
 
-		for (unsigned int i = 0; i < lenght; i++)
-		{
-			info[i] = _info[i];
-		}
-	}
 
 };
 
@@ -98,3 +79,17 @@ class Exit : Room
 
 
 #endif
+
+
+
+/* Proyecto de futuro
+void setinfo(char* _info, int lenght)
+{
+	info = new char[lenght];
+
+	for (unsigned int i = 0; i < lenght; i++)
+	{
+		info[i] = _info[i];
+	}
+}
+*/
