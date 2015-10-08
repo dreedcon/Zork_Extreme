@@ -83,6 +83,8 @@ int main()
 
 	//impresion de las posiciones de la room Kitchen
 
+	
+	
 	while (flag)
 	{
 		cin >> write;
@@ -112,17 +114,27 @@ int main()
 			printf("\n extit the kitchen.\n ");
 			printf("%s, \n\n", Position_Enter->info);
 		}
-
+		
 		//comando para cerrar
 		else if (write == "quit")
 		{
 			flag = false;
 			system("pause");
 		}
+		
 		else
 		{
 			printf("\n no te entiendo");
 		}
+	
+		
+	
 	}
+
+	
+	
+
+
+
 }
 
